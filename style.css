@@ -1,0 +1,456 @@
+
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #7209b7;
+            --success: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --warning: #f72585;
+            --correct: #2ec4b6;
+            --incorrect: #e71d36;
+            --beginner: #bf8aeb;
+            --intermediate:  #bf8aeb;;
+            --expert: #bf8aeb;;
+            --interview: #bf8aeb;;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #724d9c, #15143d);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+        
+        #splash-screen h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--success), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: textPulse 2s infinite alternate;
+        }
+        
+        #splash-screen p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            animation: fadeInOut 2s infinite;
+        }
+        
+        /* Main Container */
+        #app-container {
+            display: none;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .app-title {
+            text-align: center;
+            margin: 20px 0 40px;
+            font-size: 2.5rem;
+            /* color: #c575dd; */
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Panel Layout */
+        .panels-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .panel {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .left-panel {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .right-panel {
+            flex: 2;
+            min-height: 400px;
+        }
+        
+        .panel-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            /* color: var(--success); */
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        /* Buttons & Navigation */
+        .btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-back {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .btn-category {
+            width: 100%;
+            text-align: left;
+            margin: 10px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .btn-category:hover {
+            background: rgba(67, 97, 238, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .btn-option {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(58, 12, 163, 0.3);
+            border: 1px solid var(--accent);
+        }
+        
+        .btn-sublevel {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            margin: 10px;
+            border-radius: 50%;
+            background: rgba(76, 201, 240, 0.1);
+            border: 2px solid var(--success);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .btn-sublevel:hover {
+            background: rgba(76, 201, 240, 0.3);
+            transform: scale(1.1);
+        }
+        
+        /* Quiz Interface */
+        #quiz-container {
+            display: none;
+        }
+        
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .question-counter {
+            font-size: 1.1rem;
+            color: var(--success);
+        }
+        
+        .progress-container {
+            width: 100%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin: 15px 0;
+            height: 10px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+        
+        .question {
+            font-size: 1.3rem;
+            margin: 25px 0;
+            line-height: 1.6;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .option {
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .option:hover {
+            background: rgba(67, 97, 238, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .option.selected {
+            background: rgba(58, 12, 163, 0.4);
+            border-color: var(--accent);
+        }
+        
+        .option.correct {
+            background: rgba(46, 196, 182, 0.3);
+            border-color: var(--correct);
+        }
+        
+        .option.incorrect {
+            background: rgba(231, 29, 54, 0.3);
+            border-color: var(--incorrect);
+        }
+        
+        .option-label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: var(--primary);
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        /* Results Screen */
+        #results-container {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .score-display {
+            font-size: 5rem;
+            font-weight: bold;
+            margin: 30px 0;
+            color: var(--success);
+            text-shadow: 0 0 20px rgba(76, 201, 240, 0.7);
+        }
+        
+        .feedback {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .feedback-beginner { color: var(--beginner); }
+        .feedback-intermediate { color: var(--intermediate); }
+        .feedback-expert { color: var(--expert); }
+        .feedback-interview { color: var(--interview); }
+        
+        .incorrect-questions {
+            text-align: left;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(231, 29, 54, 0.1);
+            border-radius: 15px;
+            border: 1px solid var(--incorrect);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .incorrect-questions h3 {
+            color: var(--incorrect);
+            margin-bottom: 15px;
+        }
+        
+        .incorrect-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        
+        /* Level indicators */
+        .level-indicator {
+            display: flex;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .level-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            min-width: 200px;
+        }
+        
+        .level-item:last-child {
+            border-right: none;
+        }
+        
+        .level-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .level-beginner .level-name { color: var(--beginner); }
+        .level-intermediate .level-name { color: var(--intermediate); }
+        .level-expert .level-name { color: var(--expert); }
+        .level-interview .level-name { color: var(--interview); }
+        
+        .level-value {
+            font-size: 1.2rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInOut {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes textPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .panels-container {
+                flex-direction: column;
+            }
+            
+            #splash-screen h1 {
+                font-size: 2.5rem;
+            }
+            
+            .app-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            #splash-screen h1 {
+                font-size: 2rem;
+            }
+            
+            .app-title {
+                font-size: 1.8rem;
+            }
+            
+            .panel {
+                padding: 15px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-sublevel {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 1rem;
+            }
+            
+            .level-item {
+                min-width: 100%;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .level-item:last-child {
+                border-bottom: none;
+            }
+        }
+ 

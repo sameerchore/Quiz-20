@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coder's Quiz - Prepare for a Better Future</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <h1>Hello, Coders!</h1>
+        <p>Let's prepare for a better future.</p>
+    </div>
+    
+    <!-- Main Application -->
+    <div id="app-container">
+        <h1 class="app-title">Coder's Quiz Challenge</h1>
+        
+        <div class="level-indicator">
+            <div class="level-item level-beginner">
+                <div class="level-name">Beginner</div>
+                <div class="level-value">Basic Concepts</div>
+            </div>
+            <div class="level-item level-intermediate">
+                <div class="level-name">Intermediate</div>
+                <div class="level-value">Practical Skills</div>
+            </div>
+            <div class="level-item level-expert">
+                <div class="level-name">Expert</div>
+                <div class="level-value">Advanced Topics</div>
+            </div>
+            <div class="level-item level-interview">
+                <div class="level-name">Interview</div>
+                <div class="level-value">Job Preparation</div>
+            </div>
+        </div>
+        
+        <div class="panels-container">
+            <!-- Left Panel - Category Selection -->
+            <div class="panel left-panel">
+                <h2 class="panel-title">Choose Category</h2>
+                <div id="category-container">
+                    <button class="btn btn-category" data-category="frontend">
+                        <i class="fas fa-code"></i> Front-end
+                    </button>
+                    <button class="btn btn-category" data-category="backend" disabled>
+                        <i class="fas fa-server"></i> Back-end (coming soon)
+                    </button>
+                    <button class="btn btn-category" data-category="databases" disabled>
+                        <i class="fas fa-database"></i> Databases (coming soon)
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Dynamic Content -->
+            <div class="panel right-panel">
+                <div id="dynamic-content">
+                    <div id="language-selection" style="display: none;">
+                        <button class="btn btn-back"><i class="fas fa-arrow-left"></i> Back to Categories</button>
+                        <h2 class="panel-title">Choose Language</h2>
+                        <button class="btn btn-option" data-language="html">
+                            <i class="fab fa-html5"></i> HTML
+                        </button>
+                        <button class="btn btn-option" data-language="css">
+                            <i class="fab fa-css3-alt"></i> CSS
+                        </button>
+                        <button class="btn btn-option" data-language="javascript">
+                            <i class="fab fa-js"></i> JavaScript
+                        </button>
+                    </div>
+                    
+                    <div id="level-selection" style="display: none;">
+                        <button class="btn btn-back"><i class="fas fa-arrow-left"></i> Back to Languages</button>
+                        <h2 class="panel-title">Choose Difficulty Level</h2>
+                        <button class="btn btn-option" data-level="beginner">
+                            <i class="fas fa-seedling"></i> Beginner
+                        </button>
+                        <button class="btn btn-option" data-level="intermediate">
+                            <i class="fas fa-chart-line"></i> Intermediate
+                        </button>
+                        <button class="btn btn-option" data-level="expert">
+                            <i class="fas fa-rocket"></i> Expert
+                        </button>
+                        <button class="btn btn-option" data-level="interview">
+                            <i class="fas fa-briefcase"></i> Interview
+                        </button>
+                    </div>
+                    
+                    <div id="sublevel-selection" style="display: none;">
+                        <button class="btn btn-back"><i class="fas fa-arrow-left"></i> Back to Levels</button>
+                        <h2 class="panel-title">Choose Sub-Level</h2>
+                        <p>Each sub-level contains 20 questions</p>
+                        <div class="sublevels-container">
+                            <button class="btn btn-sublevel" data-sublevel="1">1</button>
+                            <button class="btn btn-sublevel" data-sublevel="2">2</button>
+                            <button class="btn btn-sublevel" data-sublevel="3">3</button>
+                            <button class="btn btn-sublevel" data-sublevel="4">4</button>
+                            <button class="btn btn-sublevel" data-sublevel="5">5</button>
+                        </div>
+                    </div>
+                    
+                    <div id="quiz-container">
+                        <!-- Quiz content will be generated here -->
+                    </div>
+                    
+                    <div id="results-container">
+                        <!-- Results will be shown here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>

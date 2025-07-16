@@ -1,9 +1,52 @@
-🧠 Coder's Quiz - Prepare for a Better Future
+# 🧠 Quiz-20
 
-Quiz-20 is a sleek and interactive quiz web app built for aspiring developers. 
-It helps users practice front-end skills through categorized, leveled, and sub-leveled multiple-choice questions.
-Designed with a clean UI and dynamic JavaScript functionality, it includes a splash screen, progress tracking, and results with personalized feedback.
-Users can explore topics like HTML, CSS, and JavaScript with engaging transitions.
+> A **simple, fast, and interactive quiz app** built using **HTML, CSS, and JavaScript**.  
+Challenge yourself with 20 questions and test your general knowledge! 🚀
 
-👉 Live Demo: https://sameerchore.github.io/Quiz-20/
+---
 
+## 🔗 Live Demo
+
+👉 **[Try Quiz-20 Now!](https://sameerchore.github.io/Quiz-20/)**
+
+---
+
+## 🎯 Features
+
+- ✅ **20-question quiz format**
+- ⏱️ **Auto-scoring** as you play
+- 📱 **Responsive layout** – works on all devices
+- 💯 **Instant results** at the end
+- 🧩 **Easily customizable** question bank
+
+---
+
+## ⚙️ How to Play
+
+1. 👀 Read the question and select your answer.
+2. 🔄 Navigate through 20 questions.
+3. 🧾 At the end, get your **final score** instantly.
+4. 🔁 Refresh to **play again** with the same or new questions.
+
+---
+
+## 🛠️ Tech Stack
+
+- 🌐 HTML  
+- 🎨 CSS  
+- 💻 JavaScript (DOM manipulation, logic)
+
+---
+
+## 📌 Future Improvements
+
+- 📊 Add a leaderboard or high score system  
+- 🎨 More styling/themes  
+- 📥 Load questions from an API or external file  
+- 💾 Save progress in local storage
+
+---
+
+## 👨‍💻 Author
+
+Made with ❤️ by [**Sameer Chore**](https://github.com/sameerchore)
